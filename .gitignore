@@ -3,5 +3,6 @@ transcript*
 
 # Card art generation scripts and data
 generate_card_art.py
+generate_card_mapping.py
 card_attributes.yaml
 requirements.txt
