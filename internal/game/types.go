@@ -172,17 +172,18 @@ const (
 // --- Card definition (static, from DB/scripts) ---
 
 type Card struct {
-	Name       string
-	CardType   CardType
-	Level      int
-	Attribute  Attribute
-	AgentType  string // e.g. "Enforcer", "Hacker"
-	ATK        int
-	DEF        int
-	IsEffect   bool
-	ProgramSub ProgramSubtype
-	TrapSub    TrapSubtype
-	Effects    []*CardEffect
+	Name        string
+	Description string
+	CardType    CardType
+	Level       int
+	Attribute   Attribute
+	AgentType   string // e.g. "Enforcer", "Hacker"
+	ATK         int
+	DEF         int
+	IsEffect    bool
+	ProgramSub  ProgramSubtype
+	TrapSub     TrapSubtype
+	Effects     []*CardEffect
 }
 
 func (c *Card) String() string {

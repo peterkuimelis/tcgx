@@ -27,10 +27,11 @@ func GreedProtocol() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Greed Protocol",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Greed Protocol",
+		Description: "Draw 2 cards.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -54,10 +55,11 @@ func VoidPurge() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Void Purge",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Void Purge",
+		Description: "Destroy all agents on the field.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -91,10 +93,11 @@ func EMPCascade() *Card {
 		},
 	}
 	return &Card{
-		Name:       "EMP Cascade",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "EMP Cascade",
+		Description: "Destroy all Program and Trap cards on the field.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -144,10 +147,11 @@ func ICEBreaker() *Card {
 		},
 	}
 	return &Card{
-		Name:       "ICE Breaker",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramQuickPlay,
-		Effects:    []*CardEffect{eff},
+		Name:        "ICE Breaker",
+		Description: "Target 1 Program or Trap card; destroy it.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramQuickPlay,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -187,10 +191,11 @@ func BlackoutPatch() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Blackout Patch",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramQuickPlay,
-		Effects:    []*CardEffect{eff},
+		Name:        "Blackout Patch",
+		Description: "Target 1 face-up agent; flip it face-down.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramQuickPlay,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -216,10 +221,11 @@ func ReactivePlating() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Reactive Plating",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapNormal,
-		Effects:  []*CardEffect{eff},
+		Name:        "Reactive Plating",
+		Description: "When an opponent's agent declares an attack: Destroy the attacking agent.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -245,10 +251,11 @@ func ReflectorArray() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Reflector Array",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapNormal,
-		Effects:  []*CardEffect{eff},
+		Name:        "Reflector Array",
+		Description: "When an opponent's agent declares an attack: Destroy all ATK Position agents your opponent controls.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -273,10 +280,11 @@ func CascadeFailure() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Cascade Failure",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapNormal,
-		Effects:  []*CardEffect{eff},
+		Name:        "Cascade Failure",
+		Description: "When a agent is Summoned: Destroy all agents on the field.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -326,10 +334,11 @@ func SelfDestructCircuit() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Self-Destruct Circuit",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapNormal,
-		Effects:  []*CardEffect{eff},
+		Name:        "Self-Destruct Circuit",
+		Description: "Target 1 face-up agent; destroy it, then both players take damage equal to its ATK.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -401,10 +410,11 @@ func RootOverride() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Root Override",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapCounter,
-		Effects:  []*CardEffect{eff},
+		Name:        "Root Override",
+		Description: "Pay half your HP, rounded down; negate the activation of a Program or Trap card and destroy it.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapCounter,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -468,15 +478,16 @@ func BreakerTheChromeWarrior() *Card {
 	}
 
 	return &Card{
-		Name:      "Breaker the Chrome Warrior",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrDARK,
-		AgentType: "Hacker",
-		ATK:       1600,
-		DEF:       1000,
-		IsEffect:  true,
-		Effects:   []*CardEffect{summonEffect, ignitionEffect},
+		Name:        "Breaker the Chrome Warrior",
+		Description: "When this card is Summoned: Place 1 Tech Counter on it (max. 1). This card gains 300 ATK for each Tech Counter on it. You can remove 1 Tech Counter from this card to target 1 Program/Trap; destroy that target.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrDARK,
+		AgentType:   "Hacker",
+		ATK:         1600,
+		DEF:         1000,
+		IsEffect:    true,
+		Effects:     []*CardEffect{summonEffect, ignitionEffect},
 	}
 }
 
@@ -537,15 +548,16 @@ func PolymorphicVirus() *Card {
 	}
 
 	return &Card{
-		Name:      "Polymorphic Virus",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Wetware",
-		ATK:       1600,
-		DEF:       1000,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Polymorphic Virus",
+		Description: "Discard 1 card, then target 1 face-up agent on the field; destroy all face-up agents of the same type.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Wetware",
+		ATK:         1600,
+		DEF:         1000,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -572,15 +584,16 @@ func RecursiveWorm() *Card {
 	}
 
 	return &Card{
-		Name:      "Recursive Worm",
-		CardType:  CardTypeAgent,
-		Level:     1,
-		Attribute: AttrWATER,
-		AgentType: "Splice",
-		ATK:       300,
-		DEF:       250,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Recursive Worm",
+		Description: "During your Standby Phase, if this card is in your Scrapheap: Add it to your hand.",
+		CardType:    CardTypeAgent,
+		Level:       1,
+		Attribute:   AttrWATER,
+		AgentType:   "Splice",
+		ATK:         300,
+		DEF:         250,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -631,15 +644,16 @@ func Datamancer() *Card {
 	}
 
 	return &Card{
-		Name:      "Datamancer",
-		CardType:  CardTypeAgent,
-		Level:     1,
-		Attribute: AttrLIGHT,
-		AgentType: "Hacker",
-		ATK:       300,
-		DEF:       400,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Datamancer",
+		Description: "FLIP: Target 1 Program in your Scrapheap; add that target to your hand.",
+		CardType:    CardTypeAgent,
+		Level:       1,
+		Attribute:   AttrLIGHT,
+		AgentType:   "Hacker",
+		ATK:         300,
+		DEF:         400,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -672,15 +686,16 @@ func MorphCanister() *Card {
 	}
 
 	return &Card{
-		Name:      "Morph Canister",
-		CardType:  CardTypeAgent,
-		Level:     2,
-		Attribute: AttrEARTH,
-		AgentType: "Monolith",
-		ATK:       700,
-		DEF:       600,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Morph Canister",
+		Description: "FLIP: Both players discard their entire hand, then both players draw 5 cards.",
+		CardType:    CardTypeAgent,
+		Level:       2,
+		Attribute:   AttrEARTH,
+		AgentType:   "Monolith",
+		ATK:         700,
+		DEF:         600,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -701,15 +716,16 @@ func AeroKnightParshath() *Card {
 	}
 
 	return &Card{
-		Name:      "Aero-Knight Parshath",
-		CardType:  CardTypeAgent,
-		Level:     5,
-		Attribute: AttrLIGHT,
-		AgentType: "Specter",
-		ATK:       1900,
-		DEF:       1400,
-		IsEffect:  true,
-		Effects:   []*CardEffect{piercingEffect},
+		Name:        "Aero-Knight Parshath",
+		Description: "This card can inflict piercing battle damage. When this card inflicts battle damage to your opponent: Draw 1 card.",
+		CardType:    CardTypeAgent,
+		Level:       5,
+		Attribute:   AttrLIGHT,
+		AgentType:   "Specter",
+		ATK:         1900,
+		DEF:         1400,
+		IsEffect:    true,
+		Effects:     []*CardEffect{piercingEffect},
 	}
 }
 
@@ -812,15 +828,16 @@ func ChromePaladinEnvoy() *Card {
 	}
 
 	return &Card{
-		Name:      "Chrome Paladin - Envoy of Genesis",
-		CardType:  CardTypeAgent,
-		Level:     8,
-		Attribute: AttrLIGHT,
-		AgentType: "Enforcer",
-		ATK:       3000,
-		DEF:       2500,
-		IsEffect:  true,
-		Effects:   []*CardEffect{specialSummonEff, purgeEffect},
+		Name:        "Chrome Paladin - Envoy of Genesis",
+		Description: "Cannot be Normal Summoned/Set. Must be Special Summoned by purging 1 LIGHT and 1 DARK agent from your Scrapheap. Once per turn, you can target 1 agent on the field; purge that target. If you activate this effect, this card cannot attack this turn.",
+		CardType:    CardTypeAgent,
+		Level:       8,
+		Attribute:   AttrLIGHT,
+		AgentType:   "Enforcer",
+		ATK:         3000,
+		DEF:         2500,
+		IsEffect:    true,
+		Effects:     []*CardEffect{specialSummonEff, purgeEffect},
 	}
 }
 
@@ -876,10 +893,11 @@ func HostileTakeover() *Card {
 	}
 
 	return &Card{
-		Name:       "Hostile Takeover",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramEquip,
-		Effects:    []*CardEffect{eff},
+		Name:        "Hostile Takeover",
+		Description: "Target 1 face-up agent your opponent controls; take control of that target. During each of your opponent's Standby Phases, they gain 1000 HP. When this card leaves the field, return control of the equipped agent.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramEquip,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -949,10 +967,11 @@ func EmergencyReboot() *Card {
 	}
 
 	return &Card{
-		Name:       "Emergency Reboot",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramEquip,
-		Effects:    []*CardEffect{eff},
+		Name:        "Emergency Reboot",
+		Description: "Pay 800 HP, then target 1 agent in your Scrapheap; Special Summon that target and equip it with this card. When this card leaves the field, destroy the equipped agent.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramEquip,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -996,10 +1015,11 @@ func NeuralSiphon() *Card {
 	}
 
 	return &Card{
-		Name:       "Neural Siphon",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Neural Siphon",
+		Description: "Draw 3 cards, then discard 2 cards.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1047,10 +1067,11 @@ func MemoryCorruption() *Card {
 	}
 
 	return &Card{
-		Name:       "Memory Corruption",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Memory Corruption",
+		Description: "Pay 1000 HP; your opponent discards 1 random card, then discards 1 card of their choice.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1091,10 +1112,11 @@ func TraceAndTerminate() *Card {
 	}
 
 	return &Card{
-		Name:       "Trace and Terminate",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Trace and Terminate",
+		Description: "Target 1 face-down agent; purge that target.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1159,10 +1181,11 @@ func ResurrectionProtocol() *Card {
 	}
 
 	return &Card{
-		Name:     "Resurrection Protocol",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapContinuous,
-		Effects:  []*CardEffect{eff},
+		Name:        "Resurrection Protocol",
+		Description: "Target 1 agent in your Scrapheap; Special Summon it. When this card leaves the field, destroy that agent. When that agent is destroyed, destroy this card.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapContinuous,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1232,10 +1255,11 @@ func StaticDischarge() *Card {
 	}
 
 	return &Card{
-		Name:     "Static Discharge",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapNormal,
-		Effects:  []*CardEffect{eff},
+		Name:        "Static Discharge",
+		Description: "Target 1 Program/Trap on the field; destroy that target. Then you can Set 1 Program/Trap from your hand.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1277,10 +1301,11 @@ func DecoyHolograms() *Card {
 	}
 
 	return &Card{
-		Name:       "Decoy Holograms",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramQuickPlay,
-		Effects:    []*CardEffect{eff},
+		Name:        "Decoy Holograms",
+		Description: "Special Summon 4 Holo-Decoy Tokens (Bioweapon/EARTH/Level 1/ATK 0/DEF 0) in DEF Position. You cannot Summon other agents the turn you activate this card.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramQuickPlay,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1290,61 +1315,66 @@ func DecoyHolograms() *Card {
 
 func PrismaticDatafish() *Card {
 	return &Card{
-		Name:      "Prismatic Datafish",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Abyssal",
-		ATK:       1800,
-		DEF:       800,
+		Name:        "Prismatic Datafish",
+		Description: "A shimmering construct of liquid light, darting through datastreams. Its scales refract neon in hypnotic patterns, luring unwary hackers into the abyss.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Abyssal",
+		ATK:         1800,
+		DEF:         800,
 	}
 }
 
 func BlazingAutomaton() *Card {
 	return &Card{
-		Name:      "Blazing Automaton",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       1850,
-		DEF:       0,
+		Name:        "Blazing Automaton",
+		Description: "A walking inferno wrapped in molten chrome, built for one purpose: to burn through defenses. No armor, no mercy—just raw, incinerating fury.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         1850,
+		DEF:         0,
 	}
 }
 
 func ChromeAngus() *Card {
 	return &Card{
-		Name:      "Chrome Angus",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrFIRE,
-		AgentType: "Bioweapon",
-		ATK:       1800,
-		DEF:       600,
+		Name:        "Chrome Angus",
+		Description: "A hulking bioconstruct forged from scorched flesh and alloy plating. Once a failed corporate experiment, now a rogue killer prowling the undercity ruins.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrFIRE,
+		AgentType:   "Bioweapon",
+		ATK:         1800,
+		DEF:         600,
 	}
 }
 
 func AbyssalNetrunner() *Card {
 	return &Card{
-		Name:      "Abyssal Netrunner",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Leviathan",
-		ATK:       1800,
-		DEF:       1500,
+		Name:        "Abyssal Netrunner",
+		Description: "A shadow in the deep net, this leviathan slips through firewalls like oil through cracks. Those who meet its gaze in the void are never seen online again.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Leviathan",
+		ATK:         1800,
+		DEF:         1500,
 	}
 }
 
 func VoidDrifter() *Card {
 	return &Card{
-		Name:      "Void Drifter",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Abyssal",
-		ATK:       1700,
-		DEF:       1000,
+		Name:        "Void Drifter",
+		Description: "A nomadic hunter drifting through deleted sectors. It feeds on corrupted data, growing stronger in places where reality itself has decayed.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Abyssal",
+		ATK:         1700,
+		DEF:         1000,
 	}
 }
 
@@ -1398,10 +1428,11 @@ func HeadshotRoutine() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Headshot Routine",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Headshot Routine",
+		Description: "Destroy the face-up ATK Position agent with the highest ATK on the field.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1421,10 +1452,11 @@ func OrbitalPayload() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Orbital Payload",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Orbital Payload",
+		Description: "If your opponent has more than 3000 HP: Inflict 1000 damage to your opponent.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1482,10 +1514,11 @@ func FlatlineCommand() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Flatline Command",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Flatline Command",
+		Description: "Discard 1 card, then target 1 agent on the field; destroy that target.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1533,10 +1566,11 @@ func ScrapheapRecovery() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Scrapheap Recovery",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Scrapheap Recovery",
+		Description: "Target 2 WATER agents with 1500 or less ATK in your Scrapheap; add those targets to your hand.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1578,10 +1612,11 @@ func CoreDump() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Core Dump",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramQuickPlay,
-		Effects:    []*CardEffect{eff},
+		Name:        "Core Dump",
+		Description: "Shuffle your hand into the Deck, then draw the same number of cards.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramQuickPlay,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1646,10 +1681,11 @@ func SurgeOverride() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Surge Override",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Surge Override",
+		Description: "Destroy all face-up WATER agents you control, then Special Summon WATER agents from your hand, up to the number of agents destroyed.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1699,10 +1735,11 @@ func IdentityHijack() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Identity Hijack",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramNormal,
-		Effects:    []*CardEffect{eff},
+		Name:        "Identity Hijack",
+		Description: "Each player chooses 1 agent they control and switches control of those agents with each other. Those agents cannot change their battle position this turn.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1723,10 +1760,11 @@ func CacheSiphon() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Cache Siphon",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapNormal,
-		Effects:  []*CardEffect{eff},
+		Name:        "Cache Siphon",
+		Description: "Draw 1 card.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapNormal,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1759,10 +1797,11 @@ func ReactorMeltdown() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Reactor Meltdown",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramOS,
-		Effects:    []*CardEffect{eff},
+		Name:        "Reactor Meltdown",
+		Description: "All FIRE agents on the field gain 500 ATK and lose 400 DEF.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramOS,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1793,10 +1832,11 @@ func TheUndercityGrid() *Card {
 		},
 	}
 	return &Card{
-		Name:       "The Undercity Grid",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramOS,
-		Effects:    []*CardEffect{eff},
+		Name:        "The Undercity Grid",
+		Description: "This card's name is also treated as \"NetGrid\". All WATER agents on the field gain 200 ATK and DEF. All WATER agents in your hand and on the field have their Level reduced by 1.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramOS,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1815,10 +1855,11 @@ func TortureSubnet() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Torture Subnet",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramContinuous,
-		Effects:    []*CardEffect{eff},
+		Name:        "Torture Subnet",
+		Description: "Each time your opponent takes effect damage, they take 300 additional damage.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramContinuous,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1844,10 +1885,11 @@ func SectorLockdownZoneB() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Sector Lockdown - Zone B",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramContinuous,
-		Effects:    []*CardEffect{eff},
+		Name:        "Sector Lockdown - Zone B",
+		Description: "All face-up Level 4 or higher agents on the field are changed to DEF Position.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramContinuous,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1906,10 +1948,11 @@ func NeuralShackle() *Card {
 		},
 	}
 	return &Card{
-		Name:       "Neural Shackle",
-		CardType:   CardTypeProgram,
-		ProgramSub: ProgramEquip,
-		Effects:    []*CardEffect{eff},
+		Name:        "Neural Shackle",
+		Description: "When the equipped agent is destroyed by battle: You can either draw 1 card, or discard 1 random card from your opponent's hand.",
+		CardType:    CardTypeProgram,
+		ProgramSub:  ProgramEquip,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -1989,10 +2032,11 @@ func FirewallSentinel() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Firewall Sentinel",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapCounter,
-		Effects:  []*CardEffect{eff},
+		Name:        "Firewall Sentinel",
+		Description: "When a Program is activated: If it targets exactly 1 agent, negate the activation and destroy it. Otherwise, discard 1 Program to negate the activation and destroy it.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapCounter,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2021,10 +2065,11 @@ func CounterHack() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Counter-Hack",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapContinuous,
-		Effects:  []*CardEffect{eff},
+		Name:        "Counter-Hack",
+		Description: "Each time a FIRE agent you control is destroyed: Inflict 500 damage to your opponent.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapContinuous,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2042,10 +2087,11 @@ func GravityClamp() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Gravity Clamp",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapContinuous,
-		Effects:  []*CardEffect{eff},
+		Name:        "Gravity Clamp",
+		Description: "Level 4 or higher agents cannot declare an attack.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapContinuous,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2070,10 +2116,11 @@ func SurgeBarrier() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Surge Barrier",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapContinuous,
-		Effects:  []*CardEffect{eff},
+		Name:        "Surge Barrier",
+		Description: "Activate only while \"NetGrid\" is on the field. Players take no battle damage. This card is destroyed when \"NetGrid\" leaves the field.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapContinuous,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2113,10 +2160,11 @@ func DeadlockSeal() *Card {
 		},
 	}
 	return &Card{
-		Name:     "Deadlock Seal",
-		CardType: CardTypeTrap,
-		TrapSub:  TrapContinuous,
-		Effects:  []*CardEffect{eff},
+		Name:        "Deadlock Seal",
+		Description: "Target 2 Set Programs/Traps on the field; as long as this card remains face-up on the field, the targeted cards cannot be activated.",
+		CardType:    CardTypeTrap,
+		TrapSub:     TrapContinuous,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2145,15 +2193,16 @@ func SignalAmplifier() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Signal Amplifier",
-		CardType:  CardTypeAgent,
-		Level:     2,
-		Attribute: AttrWATER,
-		AgentType: "Wetware",
-		ATK:       550,
-		DEF:       500,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Signal Amplifier",
+		Description: "All WATER agents on the field gain 500 ATK. All FIRE agents on the field lose 400 ATK.",
+		CardType:    CardTypeAgent,
+		Level:       2,
+		Attribute:   AttrWATER,
+		AgentType:   "Wetware",
+		ATK:         550,
+		DEF:         500,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2180,15 +2229,16 @@ func MicroChimera() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Micro Chimera",
-		CardType:  CardTypeAgent,
-		Level:     2,
-		Attribute: AttrFIRE,
-		AgentType: "Bioweapon",
-		ATK:       600,
-		DEF:       550,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Micro Chimera",
+		Description: "All FIRE agents on the field gain 500 ATK. All WATER agents on the field lose 400 ATK.",
+		CardType:    CardTypeAgent,
+		Level:       2,
+		Attribute:   AttrFIRE,
+		AgentType:   "Bioweapon",
+		ATK:         600,
+		DEF:         550,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2231,15 +2281,16 @@ func DenMotherUnit() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Den Mother Unit",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Cyborg",
-		ATK:       1400,
-		DEF:       1000,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Den Mother Unit",
+		Description: "When this card is destroyed by battle: You can Special Summon 1 WATER agent with 1500 or less ATK from your Deck, then shuffle your Deck.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Cyborg",
+		ATK:         1400,
+		DEF:         1000,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2279,15 +2330,16 @@ func DroneCarrier() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Drone Carrier",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrFIRE,
-		AgentType: "Machine",
-		ATK:       1400,
-		DEF:       1200,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Drone Carrier",
+		Description: "When this card is destroyed by battle: You can Special Summon 1 FIRE agent with 1500 or less ATK from your Deck, then shuffle your Deck.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrFIRE,
+		AgentType:   "Machine",
+		ATK:         1400,
+		DEF:         1200,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2334,15 +2386,16 @@ func FrostbiteTyrant() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Frostbite Tyrant",
-		CardType:  CardTypeAgent,
-		Level:     6,
-		Attribute: AttrWATER,
-		AgentType: "Wetware",
-		ATK:       2400,
-		DEF:       1000,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Frostbite Tyrant",
+		Description: "When this card is Sacrifice Summoned: You can target up to 2 Programs/Traps on the field; destroy those targets.",
+		CardType:    CardTypeAgent,
+		Level:       6,
+		Attribute:   AttrWATER,
+		AgentType:   "Wetware",
+		ATK:         2400,
+		DEF:         1000,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2383,15 +2436,16 @@ func PlasmaArcTyrant() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Plasma Arc Tyrant",
-		CardType:  CardTypeAgent,
-		Level:     6,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       2400,
-		DEF:       1000,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Plasma Arc Tyrant",
+		Description: "When this card is Sacrifice Summoned: Discard 1 random card from your opponent's hand. If the discarded card was an agent, inflict damage to your opponent equal to its Level × 100.",
+		CardType:    CardTypeAgent,
+		Level:       6,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         2400,
+		DEF:         1000,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2443,15 +2497,16 @@ func ThermalSpike() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Thermal Spike",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       1100,
-		DEF:       1900,
-		IsEffect:  true,
-		Effects:   []*CardEffect{ssEff, battleEff},
+		Name:        "Thermal Spike",
+		Description: "You can Special Summon this card from your hand by purging 1 FIRE agent from your Scrapheap. When this card destroys an agent by battle: Inflict 1500 damage to your opponent.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         1100,
+		DEF:         1900,
+		IsEffect:    true,
+		Effects:     []*CardEffect{ssEff, battleEff},
 	}
 }
 
@@ -2496,15 +2551,16 @@ func FenrirMkII() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Fenrir Mk.II",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Bioweapon",
-		ATK:       1400,
-		DEF:       1200,
-		IsEffect:  true,
-		Effects:   []*CardEffect{ssEff},
+		Name:        "Fenrir Mk.II",
+		Description: "You can Special Summon this card from your hand by purging 2 WATER agents from your Scrapheap.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Bioweapon",
+		ATK:         1400,
+		DEF:         1200,
+		IsEffect:    true,
+		Effects:     []*CardEffect{ssEff},
 	}
 }
 
@@ -2520,15 +2576,16 @@ func AmphibiousMechMK3() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Amphibious Mech MK-3",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Machine",
-		ATK:       1500,
-		DEF:       1300,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Amphibious Mech MK-3",
+		Description: "While \"NetGrid\" is on the field, this card can attack your opponent directly.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Machine",
+		ATK:         1500,
+		DEF:         1300,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2551,15 +2608,16 @@ func SirenEnforcer() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Siren Enforcer",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Wetware",
-		ATK:       1500,
-		DEF:       700,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Siren Enforcer",
+		Description: "While \"NetGrid\" is on the field, this card can attack twice during each Battle Phase.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Wetware",
+		ATK:         1500,
+		DEF:         700,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2598,15 +2656,16 @@ func AbyssalCircuitLeviathan() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Abyssal Circuit Leviathan",
-		CardType:  CardTypeAgent,
-		Level:     7,
-		Attribute: AttrWATER,
-		AgentType: "Leviathan",
-		ATK:       2600,
-		DEF:       1500,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Abyssal Circuit Leviathan",
+		Description: "You can send 1 face-up \"NetGrid\" you control to the Scrapheap; destroy all other cards on the field.",
+		CardType:    CardTypeAgent,
+		Level:       7,
+		Attribute:   AttrWATER,
+		AgentType:   "Leviathan",
+		ATK:         2600,
+		DEF:         1500,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -2693,15 +2752,16 @@ func ChromeborneHydraNexus() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Chromeborne Hydra Nexus",
-		CardType:  CardTypeAgent,
-		Level:     8,
-		Attribute: AttrWATER,
-		AgentType: "Leviathan",
-		ATK:       2900,
-		DEF:       1600,
-		IsEffect:  true,
-		Effects:   []*CardEffect{ssEff, nukeEff},
+		Name:        "Chromeborne Hydra Nexus",
+		Description: "Cannot be Normal Summoned/Set. Must be Special Summoned by Tributing 1 \"Abyssal Circuit Leviathan\". You can send 1 face-up \"NetGrid\" you control to the Scrapheap; send all other cards on the field and in both players' hands to the Scrapheap.",
+		CardType:    CardTypeAgent,
+		Level:       8,
+		Attribute:   AttrWATER,
+		AgentType:   "Leviathan",
+		ATK:         2900,
+		DEF:         1600,
+		IsEffect:    true,
+		Effects:     []*CardEffect{ssEff, nukeEff},
 	}
 }
 
@@ -2714,15 +2774,16 @@ func StealthGlider() *Card {
 	// would require engine changes to the effect serialization/response window system.
 	// For now, just define the card stats.
 	return &Card{
-		Name:      "Stealth Glider",
-		CardType:  CardTypeAgent,
-		Level:     3,
-		Attribute: AttrWATER,
-		AgentType: "Abyssal",
-		ATK:       1300,
-		DEF:       1200,
-		IsEffect:  true,
-		Effects:   []*CardEffect{},
+		Name:        "Stealth Glider",
+		Description: "When this card is Normal Summoned: Your opponent cannot activate Trap cards in response to the Summon.",
+		CardType:    CardTypeAgent,
+		Level:       3,
+		Attribute:   AttrWATER,
+		AgentType:   "Abyssal",
+		ATK:         1300,
+		DEF:         1200,
+		IsEffect:    true,
+		Effects:     []*CardEffect{},
 	}
 }
 
@@ -2740,15 +2801,16 @@ func RagingPlasmaSprite() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Raging Plasma Sprite",
-		CardType:  CardTypeAgent,
-		Level:     3,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       100,
-		DEF:       200,
-		IsEffect:  true,
-		Effects:   []*CardEffect{directEff},
+		Name:        "Raging Plasma Sprite",
+		Description: "This card can attack your opponent directly. When this card inflicts battle damage to your opponent: This card gains 1000 ATK.",
+		CardType:    CardTypeAgent,
+		Level:       3,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         100,
+		DEF:         200,
+		IsEffect:    true,
+		Effects:     []*CardEffect{directEff},
 	}
 }
 
@@ -2785,15 +2847,16 @@ func SolarFlareSerpent() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Solar Flare Serpent",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       1500,
-		DEF:       1000,
-		IsEffect:  true,
-		Effects:   []*CardEffect{cantBeAttacked, burnEff},
+		Name:        "Solar Flare Serpent",
+		Description: "Cannot be attacked while you control another Burner agent. During the End Phase: Inflict 500 damage to your opponent.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         1500,
+		DEF:         1000,
+		IsEffect:    true,
+		Effects:     []*CardEffect{cantBeAttacked, burnEff},
 	}
 }
 
@@ -2828,15 +2891,16 @@ func GhostProcess() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Ghost Process",
-		CardType:  CardTypeAgent,
-		Level:     2,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       300,
-		DEF:       200,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff, reviveEff},
+		Name:        "Ghost Process",
+		Description: "If this card is destroyed by battle: During the End Phase, Special Summon this card from the Scrapheap in DEF Position.",
+		CardType:    CardTypeAgent,
+		Level:       2,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         300,
+		DEF:         200,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff, reviveEff},
 	}
 }
 
@@ -2907,15 +2971,16 @@ func GaiaCoreTheVolatileSwarm() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Gaia Core the Volatile Swarm",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       2000,
-		DEF:       0,
-		IsEffect:  true,
-		Effects:   []*CardEffect{sacrificeEff, piercingEff, selfDestructEff},
+		Name:        "Gaia Core the Volatile Swarm",
+		Description: "Once per turn: You can Tribute up to 2 Burner agents; this card gains 1000 ATK for each. This card can inflict piercing battle damage. During your End Phase: Destroy this card.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         2000,
+		DEF:         0,
+		IsEffect:    true,
+		Effects:     []*CardEffect{sacrificeEff, piercingEff, selfDestructEff},
 	}
 }
 
@@ -2942,15 +3007,16 @@ func MoltenCyborg() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Molten Cyborg",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       1600,
-		DEF:       400,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Molten Cyborg",
+		Description: "When this card is Special Summoned: Draw 1 card.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         1600,
+		DEF:         400,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
 
@@ -3007,15 +3073,16 @@ func UltimateStreetPunk() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Ultimate Street Punk",
-		CardType:  CardTypeAgent,
-		Level:     3,
-		Attribute: AttrFIRE,
-		AgentType: "Enforcer",
-		ATK:       500,
-		DEF:       1000,
-		IsEffect:  true,
-		Effects:   []*CardEffect{contEff, ignEff},
+		Name:        "Ultimate Street Punk",
+		Description: "This card gains 1000 ATK for each face-up FIRE agent on the field, except itself. Once per turn: You can Tribute 1 face-up FIRE agent you control; inflict 500 damage to your opponent.",
+		CardType:    CardTypeAgent,
+		Level:       3,
+		Attribute:   AttrFIRE,
+		AgentType:   "Enforcer",
+		ATK:         500,
+		DEF:         1000,
+		IsEffect:    true,
+		Effects:     []*CardEffect{contEff, ignEff},
 	}
 }
 
@@ -3024,15 +3091,16 @@ func JunkyardLurker() *Card {
 	// Implementation note: this would require engine changes to the sacrifice system
 	// to allow a single agent to count as 2 sacrifices. For now, define the card.
 	return &Card{
-		Name:      "Junkyard Lurker",
-		CardType:  CardTypeAgent,
-		Level:     4,
-		Attribute: AttrWATER,
-		AgentType: "Abyssal",
-		ATK:       1500,
-		DEF:       1600,
-		IsEffect:  true,
-		Effects:   []*CardEffect{},
+		Name:        "Junkyard Lurker",
+		Description: "You can Tribute this card to Tribute Summon 1 WATER agent. This card counts as 2 Tributes for the Tribute Summon of a WATER agent.",
+		CardType:    CardTypeAgent,
+		Level:       4,
+		Attribute:   AttrWATER,
+		AgentType:   "Abyssal",
+		ATK:         1500,
+		DEF:         1600,
+		IsEffect:    true,
+		Effects:     []*CardEffect{},
 	}
 }
 
@@ -3102,14 +3170,15 @@ func ScorchedCircuitDespot() *Card {
 		},
 	}
 	return &Card{
-		Name:      "Scorched Circuit Despot",
-		CardType:  CardTypeAgent,
-		Level:     9,
-		Attribute: AttrFIRE,
-		AgentType: "Burner",
-		ATK:       2700,
-		DEF:       1600,
-		IsEffect:  true,
-		Effects:   []*CardEffect{eff},
+		Name:        "Scorched Circuit Despot",
+		Description: "When this card is Sacrifice Summoned: You can purge up to 5 FIRE agents from your Scrapheap; destroy Programs/Traps on the field, up to the number purged.",
+		CardType:    CardTypeAgent,
+		Level:       9,
+		Attribute:   AttrFIRE,
+		AgentType:   "Burner",
+		ATK:         2700,
+		DEF:         1600,
+		IsEffect:    true,
+		Effects:     []*CardEffect{eff},
 	}
 }
