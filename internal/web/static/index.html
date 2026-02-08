@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tcgx</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <!-- Lobby Screen -->
+  <div id="lobby">
+    <h1>tcgx</h1>
+    <div class="lobby-form">
+      <label for="server-addr">Game Server Address</label>
+      <input type="text" id="server-addr" value="localhost:9000" placeholder="host:port">
+
+      <label for="deck-select">Deck</label>
+      <select id="deck-select"></select>
+
+      <button id="join-btn">Join Game</button>
+      <div id="lobby-status"></div>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game" class="hidden">
+    <div id="board">
+      <!-- Opponent Info -->
+      <div id="opp-info" class="player-info">
+        <span class="player-label">Opponent</span>
+        <span class="stat">HP: <span id="opp-hp">8192</span></span>
+        <span class="stat">Hand: <span id="opp-hand-count">0</span></span>
+        <span class="stat">Deck: <span id="opp-deck-count">0</span></span>
+        <span class="stat">SH: <span id="opp-sh-count">0</span></span>
+      </div>
+
+      <!-- Opponent OS -->
+      <div id="opp-os-row" class="zone-row os-row">
+        <div class="zone-label">OS</div>
+        <div id="opp-os" class="zone os-zone"></div>
+      </div>
+
+      <!-- Opponent Tech -->
+      <div id="opp-tech-row" class="zone-row">
+        <div class="zone-label">Tech</div>
+        <div class="zone-slots" id="opp-tech"></div>
+      </div>
+
+      <!-- Opponent Agents -->
+      <div id="opp-agent-row" class="zone-row">
+        <div class="zone-label">Agent</div>
+        <div class="zone-slots" id="opp-agents"></div>
+      </div>
+
+      <!-- Divider -->
+      <div id="field-divider">
+        <span id="turn-info">Turn 1 | Draw Phase</span>
+      </div>
+
+      <!-- Your Agents -->
+      <div id="your-agent-row" class="zone-row">
+        <div class="zone-label">Agent</div>
+        <div class="zone-slots" id="your-agents"></div>
+      </div>
+
+      <!-- Your Tech -->
+      <div id="your-tech-row" class="zone-row">
+        <div class="zone-label">Tech</div>
+        <div class="zone-slots" id="your-tech"></div>
+      </div>
+
+      <!-- Your OS -->
+      <div id="your-os-row" class="zone-row os-row">
+        <div class="zone-label">OS</div>
+        <div id="your-os" class="zone os-zone"></div>
+      </div>
+
+      <!-- Your Info -->
+      <div id="your-info" class="player-info">
+        <span class="player-label">You</span>
+        <span class="stat">HP: <span id="your-hp">8192</span></span>
+        <span class="stat">Deck: <span id="your-deck-count">0</span></span>
+        <span class="stat">SH: <span id="your-sh-count">0</span></span>
+      </div>
+
+      <!-- Hand -->
+      <div id="hand-area">
+        <div id="hand"></div>
+      </div>
+    </div>
+
+    <!-- Action / Decision Panel -->
+    <div id="action-panel">
+      <div id="action-prompt"></div>
+      <div id="action-buttons"></div>
+    </div>
+
+    <!-- Event Log -->
+    <div id="event-log">
+      <div id="event-log-header">Event Log</div>
+      <div id="event-log-content"></div>
+    </div>
+  </div>
+
+  <!-- Card Tooltip -->
+  <div id="tooltip" class="hidden">
+    <img id="tooltip-art" src="" alt="">
+    <div id="tooltip-name"></div>
+    <div id="tooltip-type"></div>
+    <div id="tooltip-stats"></div>
+    <div id="tooltip-desc"></div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="game-over-modal" class="hidden">
+    <div class="modal-content">
+      <h2>Game Over</h2>
+      <div id="game-over-result"></div>
+      <button id="back-to-lobby-btn">Back to Lobby</button>
+    </div>
+  </div>
+
+  <script src="/static/game.js"></script>
+</body>
+</html>

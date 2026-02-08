@@ -8,13 +8,21 @@
 
 ---
 
-![Gameplay](gameplay.png)
+<p align="center">
+  <img src="gameplay.png" alt="CLI" width="600"><br>
+  <em>Human (CLI) vs Claude (MCP)</em>
+</p>
+
+<p align="center">
+  <img src="web.png" alt="Web UI" width="600"><br>
+  <em>Web UI (work in progress)</em>
+</p>
 
 ## Overview
 
 TCGX is a TCG duel simulator with a built-in [MCP](https://modelcontextprotocol.io/) server. It implements a full card game engine and exposes it as a set of MCP tools so that an AI agent like Claude can play against a human opponent in real time.
 
-The human connects via a CLI over TCP. The AI connects via MCP over stdio. Both players see only their own perspective — no information leaks.
+The human connects via a CLI or web browser over TCP. The AI connects via MCP over stdio. Both players see only their own perspective.
 
 ## How It Works
 
@@ -37,6 +45,7 @@ The engine handles turn structure, summoning, combat, spell/trap activation, cha
 ```bash
 go build -o tcgx-mcp ./cmd/tcgx-mcp
 go build -o tcgx-cli ./cmd/tcgx-cli
+go build -o tcgx-web ./cmd/web
 ```
 
 ### Configure MCP
@@ -60,12 +69,17 @@ Add the server to your MCP client config (`.mcp.json`):
 
 1. The AI agent calls `start_game` and picks a deck and player slot. The server starts listening on a TCP port (default 9999).
 
-2. The human joins from another terminal:
+2. The human joins from another terminal via CLI or web UI:
    ```bash
+   # CLI
    tcgx-cli join --addr localhost:9999 --deck 1
+
+   # Web UI
+   tcgx-web --port 8080 --art ./card_art
+   # Then open http://localhost:8080 and enter the server address
    ```
 
-3. The game begins. Each player takes turns through their own transport — the AI through MCP tool calls, the human through the CLI.
+3. The game begins. Each player takes turns through their own transport — the AI through MCP tool calls, the human through the CLI or browser.
 
 ## Game Basics
 
@@ -82,6 +96,16 @@ Agents are your creatures. Stronger ones (level 5+) require tributing existing A
 | `take_action` | Choose an action from the pending action list |
 | `select_cards` | Select cards from a list of candidates |
 | `answer_yes_no` | Respond to a yes/no prompt |
+
+## Web UI
+
+The web UI is a standalone HTTP server that proxies WebSocket connections to the TCP game server. It serves card art, provides mouseover tooltips with card details, and supports all decision types (actions, card selection, yes/no prompts).
+
+```bash
+tcgx-web --port 8080 --art ./card_art --decks decks.yaml --mapping card_art_mapping.json
+```
+
+The web player can join games hosted by CLI players (`tcgx-cli host`) or AI players (Claude via MCP `start_game`).
 
 ## Decks
 
