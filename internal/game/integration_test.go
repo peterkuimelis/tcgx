@@ -9,7 +9,7 @@ import (
 
 // TestTranscriptFuryVsBlaze replays a real game fragment between
 // Fury from the Deep (P1, WATER) and Blaze of Destruction (P2, FIRE).
-// Covers 4 turns with: program activations, Quick-Play from hand (MST),
+// Covers 4 turns with: program activations, Quick-Play from hand (ICE Breaker),
 // battle with destruction, special summon (ThermalSpike), continuous ATK modifiers
 // (Micro Chimera), and direct attacks.
 //
@@ -20,7 +20,7 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 	//   0-4: initial hand
 	//   5:   T1 draw
 	//   6:   T3 draw
-	//   7-8: Pot of Greed draws during T3
+	//   7-8: Greed Protocol draws during T3
 	p1Deck := makePaddedDeck([]*Card{
 		AbyssalNetrunner(),  // initial hand
 		VoidDrifter(),       // initial hand
@@ -37,7 +37,7 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 	// Draw order:
 	//   0-4: initial hand
 	//   5:   T2 draw
-	//   6-7: Pot of Greed draws during T2
+	//   6-7: Greed Protocol draws during T2
 	//   8:   T4 draw
 	p2Deck := makePaddedDeck([]*Card{
 		GreedProtocol(),            // initial hand
@@ -58,7 +58,7 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 	p0.AddAction(ActionSetTech, "Deadlock Seal")
 	p0.AddAction(ActionNormalSummon, "Void Drifter")
 
-	// Turn 3: Pot of Greed, Hammer Shot (destroy Great Angus), summon + direct attack
+	// Turn 3: Greed Protocol, Headshot Routine (destroy Chrome Angus), summon + direct attack
 	p0.AddAction(ActionActivate, "Greed Protocol")
 	p0.AddAction(ActionActivate, "Headshot Routine")
 	p0.AddAction(ActionNormalSummon, "Abyssal Netrunner")
@@ -68,11 +68,11 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 	// ===== Script P2 (Blaze of Destruction) =====
 	p1 := NewScriptedController(t, "P2")
 
-	// Turn 2: Burn program, draw program, MST the set trap, summon + attack
+	// Turn 2: Burn program, draw program, ICE Breaker the set trap, summon + attack
 	p1.AddAction(ActionActivate, "Orbital Payload")
 	p1.AddAction(ActionActivate, "Greed Protocol")
 	p1.AddAction(ActionActivate, "ICE Breaker")
-	p1.AddCardChoice("Deadlock Seal") // MST target
+	p1.AddCardChoice("Deadlock Seal") // ICE Breaker target
 	p1.AddAction(ActionNormalSummon, "Chrome Angus")
 	p1.AddAction(ActionEnterBattlePhase, "")
 	p1.AddAttack("Chrome Angus", "Void Drifter")

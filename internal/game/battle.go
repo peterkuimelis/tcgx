@@ -110,7 +110,7 @@ func (d *Duel) executeAttack(action Action) error {
 	}
 	d.log(log.NewAttackDeclareEvent(gs.Turn, tp, attacker.Card.Name, defenderName))
 
-	// Response window after attack declaration (e.g. Mirror Force, Sakuretsu Armor)
+	// Response window after attack declaration (e.g. Reflector Array, Reactive Plating)
 	if err := d.openResponseWindow(opp); err != nil {
 		return err
 	}

@@ -218,7 +218,7 @@ func (d *Duel) destroyByEffect(card *CardInstance, reason string) {
 	d.recalculateContinuousEffects()
 }
 
-// destroyAllAgents destroys all agents on the field (Dark Hole / Cascade Failure).
+// destroyAllAgents destroys all agents on the field (Void Purge / Cascade Failure).
 func (d *Duel) destroyAllAgents(reason string) {
 	gs := d.State
 	for p := 0; p < 2; p++ {
@@ -238,7 +238,7 @@ func (d *Duel) destroyAllTech(reason string) {
 	}
 }
 
-// flipFaceDown flips a face-up agent to face-down DEF (Book of Moon).
+// flipFaceDown flips a face-up agent to face-down DEF (Blackout Patch).
 func (d *Duel) flipFaceDown(card *CardInstance) {
 	gs := d.State
 	// Destroy equips when flipped face-down
