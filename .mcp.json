@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "tcgx": {
+      "type": "stdio",
+      "command": "go",
+      "args": ["run", "./cmd/tcgx-mcp", "--decks", "decks.yaml"],
+      "cwd": "/Users/peter/projects/tcgx"
+    }
+  }
+}

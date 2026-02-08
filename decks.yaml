@@ -1,0 +1,132 @@
+decks:
+  - name: Deepnet Fury
+    cards:
+      - name: Neon Hydra Lord - Neo-Daedalus
+        count: 1
+      - name: Prismatic Datafish
+        count: 1
+      - name: Abyssal Netrunner
+        count: 1
+      - name: Void Drifter
+        count: 1
+      - name: Den Mother Unit
+        count: 3
+      - name: Signal Amplifier
+        count: 1
+      - name: Polymorphic Virus
+        count: 1
+      - name: Fenrir Mk.II
+        count: 2
+      - name: Amphibious Mech MK-3
+        count: 1
+      - name: Levia-Mech - Daedalus
+        count: 1
+      - name: Siren Enforcer
+        count: 1
+      - name: Mobius the Cryo Sovereign
+        count: 1
+      - name: Junkyard Lurker
+        count: 1
+      - name: Stealth Glider
+        count: 1
+      - name: Hostile Takeover
+        count: 1
+      - name: ICE Breaker
+        count: 1
+      - name: Emergency Reboot
+        count: 1
+      - name: Greed Protocol
+        count: 1
+      - name: EMP Cascade
+        count: 1
+      - name: The Undercity Grid
+        count: 3
+      - name: Identity Hijack
+        count: 1
+      - name: Core Dump
+        count: 2
+      - name: Scrapheap Recovery
+        count: 2
+      - name: Headshot Routine
+        count: 1
+      - name: Surge Override
+        count: 1
+      - name: Static Discharge
+        count: 1
+      - name: Resurrection Protocol
+        count: 1
+      - name: Gravity Clamp
+        count: 2
+      - name: Surge Barrier
+        count: 1
+      - name: Cascade Failure
+        count: 1
+      - name: Firewall Type-8
+        count: 1
+      - name: Deadlock Seal
+        count: 1
+
+  - name: Cyberblaze
+    cards:
+      - name: Infernal Plasma Emperor
+        count: 1
+      - name: Chrome Angus
+        count: 1
+      - name: Blazing Automaton
+        count: 1
+      - name: Drone Carrier
+        count: 3
+      - name: Micro Chimera
+        count: 1
+      - name: Thermal Spike
+        count: 2
+      - name: Molten Cyborg
+        count: 1
+      - name: Solar Flare Serpent
+        count: 2
+      - name: Ultimate Street Punk
+        count: 2
+      - name: Raging Plasma Sprite
+        count: 1
+      - name: Thestalos the Plasma Sovereign
+        count: 1
+      - name: Gaia Core the Volatile Swarm
+        count: 1
+      - name: Ghost Process
+        count: 1
+      - name: Hostile Takeover
+        count: 1
+      - name: ICE Breaker
+        count: 1
+      - name: Reactor Meltdown
+        count: 2
+      - name: Trace and Terminate
+        count: 1
+      - name: Emergency Reboot
+        count: 1
+      - name: Greed Protocol
+        count: 1
+      - name: Flatline Command
+        count: 1
+      - name: EMP Cascade
+        count: 1
+      - name: Torture Subnet
+        count: 1
+      - name: Core Dump
+        count: 1
+      - name: Sector Lockdown - Zone B
+        count: 2
+      - name: Neural Shackle
+        count: 1
+      - name: Orbital Payload
+        count: 1
+      - name: Static Discharge
+        count: 2
+      - name: Resurrection Protocol
+        count: 1
+      - name: Cache Siphon
+        count: 1
+      - name: Firewall Type-8
+        count: 1
+      - name: Counter-Hack
+        count: 2
