@@ -12,7 +12,7 @@
 
 ## Overview
 
-TCGX is a TCG duel simulator with a built-in [MCP](https://modelcontextprotocol.io/) server. It implements a full card game engine — complete with phases, chains, tribute summoning, and trap cards — and exposes it as a set of MCP tools so that an AI agent like Claude can play against a human opponent in real time.
+TCGX is a TCG duel simulator with a built-in [MCP](https://modelcontextprotocol.io/) server. It implements a full card game engine and exposes it as a set of MCP tools so that an AI agent like Claude can play against a human opponent in real time.
 
 The human connects via a CLI over TCP. The AI connects via MCP over stdio. Both players see only their own perspective — no information leaks.
 
