@@ -1339,10 +1339,10 @@ func BlazingAutomaton() *Card {
 	}
 }
 
-func ChromeAngus() *Card {
+func SteelJuggernaut() *Card {
 	return &Card{
-		Name:        "Chrome Angus",
-		Description: "A hulking bioconstruct forged from scorched flesh and alloy plating. Once a failed corporate experiment, now a rogue killer prowling the undercity ruins.",
+		Name:        "Steel Juggernaut",
+		Description: "A hulking mech-beast forged from scorched steel and alloy plating. Once a failed corporate war machine, now a rogue juggernaut prowling the undercity ruins.",
 		CardType:    CardTypeAgent,
 		Level:       4,
 		Attribute:   AttrFIRE,

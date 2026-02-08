@@ -1,1 +1,7 @@
 .env
+transcript*
+
+# Card art generation scripts and data
+generate_card_art.py
+card_attributes.yaml
+requirements.txt

@@ -31,7 +31,7 @@ var CardRegistry = map[string]func() *Card{
 	"Decoy Holograms":                   DecoyHolograms,
 	"Prismatic Datafish":                PrismaticDatafish,
 	"Blazing Automaton":                 BlazingAutomaton,
-	"Chrome Angus":                      ChromeAngus,
+	"Steel Juggernaut":                  SteelJuggernaut,
 	"Abyssal Netrunner":                 AbyssalNetrunner,
 	"Void Drifter":                      VoidDrifter,
 	"Headshot Routine":                  HeadshotRoutine,

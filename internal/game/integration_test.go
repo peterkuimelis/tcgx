@@ -44,7 +44,7 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 		SectorLockdownZoneB(),      // initial hand
 		ThermalSpike(),             // initial hand
 		GaiaCoreTheVolatileSwarm(), // initial hand
-		ChromeAngus(),              // initial hand
+		SteelJuggernaut(),              // initial hand
 		OrbitalPayload(),           // T2 draw
 		ICEBreaker(),               // PoG draw 1
 		MicroChimera(),             // PoG draw 2
@@ -58,7 +58,7 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 	p0.AddAction(ActionSetTech, "Deadlock Seal")
 	p0.AddAction(ActionNormalSummon, "Void Drifter")
 
-	// Turn 3: Greed Protocol, Headshot Routine (destroy Chrome Angus), summon + direct attack
+	// Turn 3: Greed Protocol, Headshot Routine (destroy Steel Juggernaut), summon + direct attack
 	p0.AddAction(ActionActivate, "Greed Protocol")
 	p0.AddAction(ActionActivate, "Headshot Routine")
 	p0.AddAction(ActionNormalSummon, "Abyssal Netrunner")
@@ -73,13 +73,13 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 	p1.AddAction(ActionActivate, "Greed Protocol")
 	p1.AddAction(ActionActivate, "ICE Breaker")
 	p1.AddCardChoice("Deadlock Seal") // ICE Breaker target
-	p1.AddAction(ActionNormalSummon, "Chrome Angus")
+	p1.AddAction(ActionNormalSummon, "Steel Juggernaut")
 	p1.AddAction(ActionEnterBattlePhase, "")
-	p1.AddAttack("Chrome Angus", "Void Drifter")
+	p1.AddAttack("Steel Juggernaut", "Void Drifter")
 
 	// Turn 4: Special summon ThermalSpike (purge from Scrapheap), summon Micro Chimera, attack with modifier
 	p1.AddAction(ActionActivate, "Thermal Spike") // special summon via ActionActivate
-	p1.AddCardChoice("Chrome Angus")              // purge FIRE from Scrapheap as ThermalSpike cost
+	p1.AddCardChoice("Steel Juggernaut")              // purge FIRE from Scrapheap as ThermalSpike cost
 	p1.AddAction(ActionNormalSummon, "Micro Chimera")
 	p1.AddAction(ActionEnterBattlePhase, "")
 	p1.AddAttack("Thermal Spike", "Abyssal Netrunner")
@@ -106,7 +106,7 @@ func TestTranscriptFuryVsBlaze(t *testing.T) {
 // the attack is stopped and no damage is dealt.
 //
 // T1 (P1): Set Gravity Clamp face-down
-// T2 (P2): Summon Chrome Angus (Level 4, ATK 1800), declare direct attack
+// T2 (P2): Summon Steel Juggernaut (Level 4, ATK 1800), declare direct attack
 //
 //	→ P1 activates Gravity Clamp in response → attack stopped, 0 damage
 func TestGravityClampStopsAttack(t *testing.T) {
@@ -115,24 +115,24 @@ func TestGravityClampStopsAttack(t *testing.T) {
 		GravityClamp(), // initial hand [0]
 	}, 40)
 
-	// P2: Chrome Angus in hand, rest filler
+	// P2: Steel Juggernaut in hand, rest filler
 	p2Deck := makePaddedDeck([]*Card{
-		ChromeAngus(), // initial hand [0]
+		SteelJuggernaut(), // initial hand [0]
 	}, 40)
 
 	// === P1 script ===
 	p0 := NewScriptedController(t, "P1")
 	// T1: Set Gravity Clamp face-down
 	p0.AddAction(ActionSetTech, "Gravity Clamp")
-	// T2 response window: activate Gravity Clamp when Chrome Angus declares attack
+	// T2 response window: activate Gravity Clamp when Steel Juggernaut declares attack
 	p0.AddAction(ActionActivate, "Gravity Clamp")
 
 	// === P2 script ===
 	p1 := NewScriptedController(t, "P2")
-	// T2: Summon Chrome Angus, enter battle, direct attack
-	p1.AddAction(ActionNormalSummon, "Chrome Angus")
+	// T2: Summon Steel Juggernaut, enter battle, direct attack
+	p1.AddAction(ActionNormalSummon, "Steel Juggernaut")
 	p1.AddAction(ActionEnterBattlePhase, "")
-	p1.AddDirectAttack("Chrome Angus")
+	p1.AddDirectAttack("Steel Juggernaut")
 
 	cfg := DuelConfig{
 		Deck0:    p1Deck,
@@ -152,13 +152,13 @@ func TestGravityClampStopsAttack(t *testing.T) {
 	// Assert: AttackStopped event must exist
 	found := false
 	for _, ev := range logger.Events() {
-		if ev.Type == log.EventAttackStopped && ev.Card == "Chrome Angus" {
+		if ev.Type == log.EventAttackStopped && ev.Card == "Steel Juggernaut" {
 			found = true
 			break
 		}
 	}
 	if !found {
-		t.Errorf("Expected EventAttackStopped for Chrome Angus, but not found in log")
+		t.Errorf("Expected EventAttackStopped for Steel Juggernaut, but not found in log")
 	}
 
 	// Assert: P1 HP unchanged (no damage dealt)
