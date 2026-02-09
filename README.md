@@ -10,12 +10,7 @@
 
 <p align="center">
   <img src="gameplay.png" alt="CLI" width="600"><br>
-  <em>Human (CLI) vs Claude (MCP)</em>
-</p>
-
-<p align="center">
-  <img src="web.png" alt="Web UI" width="600"><br>
-  <em>Web UI (work in progress)</em>
+  <em>Human (Web UI) vs Claude (MCP)</em>
 </p>
 
 ## Overview

@@ -549,6 +549,7 @@ func (d *Duel) destroyOS(player int) {
 	gs.Players[player].OS = nil
 	gs.Players[fs.Owner].SendToScrapheap(fs)
 	d.log(log.NewSendToScrapheapEvent(gs.Turn, gs.Phase.String(), fs.Owner, fs.Card.Name, "OS replaced"))
+	d.recalculateContinuousEffects()
 }
 
 // isNetGridOnField checks if "NetGrid" (or a card treated as "NetGrid") is face-up on the field.
