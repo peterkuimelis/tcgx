@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.png" alt="TCGX" width="800">
+  <img src="banner.png" alt="TCGX" width="750">
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 ---
 
 <p align="center">
-  <img src="gameplay.png" alt="CLI" width="800"><br>
+  <img src="gameplay.png" alt="CLI" width="750"><br>
   <em>Human (Web UI) vs Claude (MCP)</em>
 </p>
 
