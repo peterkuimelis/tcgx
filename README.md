@@ -9,7 +9,7 @@
 ---
 
 <p align="center">
-  <img src="gameplay.png" alt="CLI" width="750"><br>
+  <img src="gameplay.png" alt="Gameplay" width="750"><br>
   <em>Human (Web UI) vs Claude (MCP)</em>
 </p>
 
@@ -17,14 +17,14 @@
 
 TCGX is a TCG duel simulator with a built-in [MCP](https://modelcontextprotocol.io/) server. It implements a full card game engine and exposes it as a set of MCP tools so that an AI agent like Claude can play against a human opponent in real time.
 
-The human connects via a CLI or web browser over TCP. The AI connects via MCP over stdio. Both players see only their own perspective.
+The human connects via a web browser or CLI. The AI connects via MCP over stdio. Both players see only their own perspective.
 
 ## How It Works
 
 The game runs as a single Go process with two transport layers:
 
 - **MCP (stdio)** — The AI agent calls tools like `take_action`, `select_cards`, and `answer_yes_no` to make decisions. A `get_game_state` tool provides the agent with a view of the board.
-- **TCP** — The human player connects from a separate terminal and interacts through a JSON-based REPL.
+- **TCP** — The human player connects through the web UI (WebSocket proxy) or the CLI (direct TCP).
 
 The engine handles turn structure, summoning, combat, spell/trap activation, chain resolution, and win conditions. Games end when a player's LP hits 0 or they deck out.
 
@@ -64,17 +64,17 @@ Add the server to your MCP client config (`.mcp.json`):
 
 1. The AI agent calls `start_game` and picks a deck and player slot. The server starts listening on a TCP port (default 9999).
 
-2. The human joins from another terminal via CLI or web UI:
+2. The human joins via the web UI or CLI:
    ```bash
-   # CLI
-   tcgx-cli join --addr localhost:9999 --deck 1
-
-   # Web UI
+   # Web UI (recommended)
    tcgx-web --port 8080 --art ./card_art
-   # Then open http://localhost:8080 and enter the server address
+   # Then open http://localhost:8080 and enter the server address and deck
+
+   # CLI (alternative)
+   tcgx-cli join --addr localhost:9999 --deck 1
    ```
 
-3. The game begins. Each player takes turns through their own transport — the AI through MCP tool calls, the human through the CLI or browser.
+3. The game begins. Each player takes turns through their own transport — the AI through MCP tool calls, the human through the browser or CLI.
 
 ## Game Basics
 
